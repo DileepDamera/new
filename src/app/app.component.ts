@@ -21,11 +21,11 @@ export class AppComponent implements OnInit {
       fName: 'Sammy',
       lName: '',
       email: '',
-      sex: ''
+      gender: ''
     });
   }
 
   onSubmit(form: FormGroup) {
-    
+
   }
 }
