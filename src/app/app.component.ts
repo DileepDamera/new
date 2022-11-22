@@ -11,6 +11,12 @@ export class AppComponent implements OnInit {
   selectedValue =  '';
   myForm: FormGroup;
 
+  activeState: boolean[] = [true, false, false];
+
+    button(index: number) {
+        this.activeState[index] = !this.activeState[index];
+    }
+
 
   constructor(private fb: FormBuilder) {
     

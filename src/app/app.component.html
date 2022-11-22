@@ -1,5 +1,5 @@
 <p-accordion>
-  <p-accordionTab header="Header 1" [selected]="true">
+  <p-accordionTab header="Header 1" [(selected)]="activeState[0]">
     <ng-template pTemplate="content">
       <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
       <div class="p-float-label">
@@ -30,16 +30,21 @@
 
     </ng-template> 
   </p-accordionTab>
-  <p-accordionTab header="Header 2">
+  <p-accordionTab header="Header 2" [(selected)]="activeState[1]">
     <ng-template pTemplate="content">It is a long established fact that a reader will be distracted by 
       the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that 
       it has a more-or-less normal distribution of letters, as opposed to using 'Content here, 
       content here', making it look like readable English.</ng-template> 
   </p-accordionTab>
-  <p-accordionTab header="Header 3">
+  <p-accordionTab header="Header 3" [(selected)]="activeState[2]">
     <ng-template pTemplate="content">It is a long established fact that a reader will be distracted by 
       the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that 
       it has a more-or-less normal distribution of letters, as opposed to using 'Content here, 
       content here', making it look like readable English.</ng-template>  
   </p-accordionTab>
 </p-accordion>
+<div class="py-3">
+  <p-button [icon]="activeState[0] ? 'pi pi-minus' : 'pi pi-plus'" (click)="button(0)" styleClass="p-button-text" label="button 1st"></p-button>
+  <p-button [icon]="activeState[1] ? 'pi pi-minus' : 'pi pi-plus'" (click)="button(1)" styleClass="p-button-text ml-2" label="button 2nd"></p-button>
+  <p-button [icon]="activeState[2] ? 'pi pi-minus' : 'pi pi-plus'" (click)="button(2)" styleClass="p-button-text ml-2" label="button 3rd"></p-button>
+</div>
